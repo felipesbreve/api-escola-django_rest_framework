@@ -10,17 +10,19 @@ class AlunosViewSet(viewsets.ModelViewSet):
             return AlunoSerializerV2
         else:
             return AlunoSerializer
-    #serializer_class = get_serializer_class()
+    #http_method_names = ['get', 'post']
 
 class CursosViewSet(viewsets.ModelViewSet):
     """Exibindo todos os cursos"""
     queryset = Curso.objects.all()
     serializer_class = CursoSerializer
+    #http_method_names = ['get', 'post']
 
 class MatriculasViewSet(viewsets.ModelViewSet):
     """Exibindo todas as matrículas"""
     queryset = Matricula.objects.all()
     serializer_class = MatriculaSerializer
+    http_method_names = ['get', 'post', 'put', 'patch']
 
 class ListaMatriculaAluno(generics.ListAPIView):
     """Listando as matrículas de um aluno ou aluna"""
