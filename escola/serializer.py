@@ -36,3 +36,8 @@ class ListaAlunosMatriculadosSerializer(serializers.ModelSerializer):
     
     def get_periodo(self, obj):
         return obj.get_periodo_display()
+    
+class AlunoSerializerV2(serializers.ModelSerializer):
+    class Meta:
+        model = Aluno
+        fields = ['id', 'nome', 'celular', 'rg', 'cpf', 'data_nascimento']
